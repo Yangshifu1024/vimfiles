@@ -50,8 +50,10 @@ Plugin 'airblade/vim-gitgutter'
 " Buffers surfing
 Plugin 'ton/vim-bufsurf'
 
-"Neo bundles
+"Neo complete
 Plugin 'Shougo/neocomplete'
+
+" Neo snippets
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 " More snippets
@@ -72,6 +74,12 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'scrooloose/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
+
+" Configuration files syntax
+Plugin 'cespare/vim-toml'
+
+" Easymotion!!
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 filetype plugin indent on
@@ -241,7 +249,7 @@ let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#sources#syntax#min_keyword_length = 1
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
