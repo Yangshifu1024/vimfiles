@@ -102,7 +102,6 @@ set incsearch
 set ignorecase
 set smartcase
 " Hide line number and fake a custom left padding area with 2 width
-set nonumber
 hi LineNr guibg=bg
 set foldcolumn=2
 hi foldcolumn guibg=bg
