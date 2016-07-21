@@ -135,7 +135,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 "===GUI===
-set guifont=Source_Code_Pro_Medium:h18
+set guifont=Source_Code_Pro_Medium:h16
 set guioptions-=e
 set guioptions-=l
 set guioptions-=L
