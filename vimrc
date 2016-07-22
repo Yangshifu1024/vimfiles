@@ -50,9 +50,8 @@ Plugin 'airblade/vim-gitgutter'
 " Buffers surfing
 Plugin 'ton/vim-bufsurf'
 
-" Neo snippets
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
+" Ultisnips
+Plugin 'SirVer/ultisnips'
 " More snippets
 Plugin  'honza/vim-snippets'
 
@@ -242,11 +241,10 @@ let g:netrw_hide=1
 let g:netrw_list_hide='.DS_Store,.git,.src,.tags'
 
 
-"===Neosnippet=== 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
+"===Ultisnips=== 
+let g:UltiSnipsExpandTrigger="<D-j>"
+let g:UltiSnipsJumpForwardTrigger="<D-j>"
+let g:UltiSnipsJumpBackwardTrigger="<D-k>"
 
 "===SupreTab===
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
