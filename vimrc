@@ -68,8 +68,16 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 
 Plugin 'scrooloose/syntastic'
+" For rust lang
 Plugin 'rust-lang/rust.vim'
+" For golang
 Plugin 'fatih/vim-go'
+" For es6
+Plugin 'othree/yajs.vim'
+Plugin 'othree/es.next.syntax.vim'
+" For html and html5
+Plugin 'othree/html5.vim'
+Plugin 'alvan/vim-closetag'
 
 " Configuration files syntax
 Plugin 'cespare/vim-toml'
