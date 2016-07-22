@@ -393,3 +393,16 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+"===Useful functions===
+
+" BuildCTags
+function! BuildCTags()
+    if(executable("ctags"))
+        silent! execute "!rm -f .src .tags"
+        silent! execute "!find . -name '*.php' -o -name '*.c' -o -name '*.h' > .src"
+        execute "!ctags -L .src -f .tags --totals"
+        set tags=.tags,~/.vimtags
+    endif
+endf
+nmap ,0  :call BuildCTags()<cr>
