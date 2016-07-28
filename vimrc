@@ -152,9 +152,6 @@ set autoread
 set autowriteall
 set complete=.,w,b,u,i
 set completeopt=longest,menuone
-if has("gui_running")
-    set macligatures
-endif
 
 "===Interface===
 syntax on
@@ -167,6 +164,13 @@ colorscheme base16-ocean
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
 set cursorline
+
+"===MacVim===
+highlight LineNr ctermbg=NONE
+if has("gui_running")
+    set macligatures
+    highlight LineNr guibg=NONE
+endif
 
 "===Mappings===
 " Make it easy to edit the Vimrc file
