@@ -243,7 +243,7 @@ let g:airline_detect_modified=1
 let g:airline_theme='murmur'
 
 "===netrw===
-let g:netrw_liststyle=3
+" let g:netrw_liststyle=3
 let g:netrw_winsize=30
 let g:netrw_hide=1
 let g:netrw_list_hide='.DS_Store,.git,.src,.tags'
@@ -251,8 +251,8 @@ let g:netrw_list_hide='.DS_Store,.git,.src,.tags'
 
 "===Ultisnips=== 
 let g:UltiSnipsExpandTrigger="<D-j>"
-let g:UltiSnipsJumpForwardTrigger="<D-j>"
-let g:UltiSnipsJumpBackwardTrigger="<D-k>"
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
 "===SupreTab===
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
