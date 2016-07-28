@@ -341,6 +341,16 @@ function! BuildCTags()
 endf
 nmap ,0  :call BuildCTags()<cr>
 
+" Clang-Format
+function! ClangFormat()
+    if (executable("clang-format"))
+        let s:current_file = @%
+        let command = "!clang-format -style=file -i " . s:current_file
+        exec command
+    endif
+endf
+nmap ,cf :call ClangFormat()<cr>
+
 " Move a line of text using Comamnd+[jk]
 nmap <D-j> mz:m+<cr>`z
 nmap <D-k> mz:m-2<cr>`z
