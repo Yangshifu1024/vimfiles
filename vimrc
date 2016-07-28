@@ -94,6 +94,7 @@ filetype plugin indent on
 
 "===General===
 let mapleader=","
+set nu
 set viminfo='1000,n$HOME/.vim/viminfo
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
@@ -109,11 +110,7 @@ set report=0
 set incsearch
 set ignorecase
 set smartcase
-" Hide line number and fake a custom left padding area with 2 width
-hi LineNr guibg=bg
 set foldcolumn=0
-hi foldcolumn guibg=bg
-
 set showmatch
 set showcmd
 set title
@@ -164,7 +161,7 @@ syntax on
 set background=dark
 let base16colorspace=256
 colorscheme base16-ocean
-set transparency=5
+" set transparency=5
 
 " Highlight current line
 au WinLeave * set nocursorline
@@ -199,7 +196,7 @@ nmap :bn :BufSurfForward<cr>
 nnoremap <F3> :bn<CR>
 nnoremap <F4> :bp<CR>
 
-" Some tips 
+" Some tips
 nnoremap <Up> :echomsg "use k !"<cr>
 nnoremap <Down> :echomsg "use j !"<cr>
 nnoremap <Left> :echomsg "use h !"<cr>
@@ -249,7 +246,7 @@ let g:netrw_hide=1
 let g:netrw_list_hide='.DS_Store,.git,.src,.tags'
 
 
-"===Ultisnips=== 
+"===Ultisnips===
 let g:UltiSnipsExpandTrigger="<D-j>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
