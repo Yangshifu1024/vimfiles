@@ -140,7 +140,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 "===GUI===
-set guifont=Source_Code_Pro_Medium:h16
+set guifont=DejaVu_Sans_Mono:h19
 set guioptions-=e
 set guioptions-=l
 set guioptions-=L
@@ -247,7 +247,7 @@ let g:airline_theme='murmur'
 " let g:netrw_liststyle=3
 let g:netrw_winsize=30
 let g:netrw_hide=1
-let g:netrw_list_hide='.DS_Store,.git,.src,.tags'
+let g:netrw_list_hide='.*\.DS_Store,.*\.git,.*\.src,.*\.tags,.*\.o,.*\.deps,.*\.dirstamp'
 
 
 "===Ultisnips===
