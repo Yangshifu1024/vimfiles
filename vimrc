@@ -129,7 +129,7 @@ set expandtab
 "===FileType===
 " Special filetype tabstop
 autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType js,vue,html,json,md,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType js,vue,html,json,md,css,h,c,cc setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 " Syntax support
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.vue set filetype=html
