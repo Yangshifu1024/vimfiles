@@ -329,6 +329,9 @@ let g:easytags_syntax_keyword = 'always'
 let g:easytags_always_enabled = 1
 let g:easytags_suppress_ctags_warning = 1
 
+"===YouCompleteMe===
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
 "===Useful functions===
 
 " BuildCTags
