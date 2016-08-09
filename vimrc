@@ -89,6 +89,10 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 
+" React
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -331,6 +335,9 @@ let g:easytags_suppress_ctags_warning = 1
 
 "===YouCompleteMe===
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+"===vim-jsx===
+let g:jsx_ext_required = 0
 
 "===Useful functions===
 
