@@ -363,6 +363,39 @@ function! ClangFormat()
 endf
 nmap ,cf :call ClangFormat()<cr>
 
+" PHP cs fixer
+function! PhpCsFixer()
+    let s:current_file = @%
+    let command = "!php-cs-fixer fix " . s:current_file . " --config-file=$HOME/.php_cs"
+    exec command
+endfunction
+nmap ,pf :call PhpCsFixer()<cr>
+
+" js-beautify
+function! JsBeautify()
+    let s:current_file = @%
+    let command = "!js-beautify " . s:current_file . " -r"
+    exec command
+endfunction
+nmap ,jf :call JsBeautify()<cr>
+
+" html-beautify
+function! HtmlBeautify()
+    let s:current_file = @%
+    let command = "!html-beautify " . s:current_file . " -r"
+    exec command
+endfunction
+nmap ,hf :call HtmlBeautify()<cr>
+
+" go fmt
+function! GoFmt()
+    let s:current_file = @%
+    let command = "!gofmt -w " . s:current_file
+    exec command
+endfunction
+nmap ,fg :call GoFmt()<cr>
+nmap ,lg :call GoLint()<cr>
+
 " Move a line of text using Comamnd+[jk]
 nmap <D-j> mz:m+<cr>`z
 nmap <D-k> mz:m-2<cr>`z
