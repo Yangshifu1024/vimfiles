@@ -58,7 +58,8 @@ Plugin  'honza/vim-snippets'
 "PHP
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'StanAngeloff/php.vim'
-Plugin 'evidens/vim-twig'
+Plugin 'lumiliet/vim-twig'
+Plugin 'tobyS/pdv'
 
 "Search and replace
 Plugin 'rking/ag.vim'
@@ -339,6 +340,10 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 "===vim-jsx===
 let g:jsx_ext_required = 0
+
+"===PHP===
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+autocmd BufRead,BufNewFile *.php nnoremap <buffer> <Leader>c :call pdv#DocumentCurrentLine()<CR>
 
 "===Useful functions===
 
