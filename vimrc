@@ -58,6 +58,7 @@ Plugin  'honza/vim-snippets'
 "PHP
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'StanAngeloff/php.vim'
+Plugin 'evidens/vim-twig'
 
 "Search and replace
 Plugin 'rking/ag.vim'
