@@ -8,8 +8,6 @@ install: init
 	ln -s -f `pwd`/gvimrc ~/.gvimrc
 	@mkdir -p ~/.vim/backup
 	@mkdir -p ~/.vim/swap
-	mvim +PluginInstall
-	@echo "Installation complete."
 	@echo "Correct the absolute path of rust source in ~/.vimrc file as g:ycm_rust_src_path."
 
 uninstall:
