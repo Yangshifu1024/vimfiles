@@ -1,9 +1,38 @@
 # vimfiles
 My vimfiles
 
-- `brew install macvim --with-lua --with-override-system-vim`
-- `brew install the_silver_searcher universal-ctags`
+- Install MavVim:
+
+   ```brew install macvim --with-lua --with-override-system-vim```
+- Install editorconfig:
+
+   ```brew install editorconfig```
+- Install ag:
+
+  ```brew install the_silver_searcher```
+- Install universal-ctags
+
+  ```
+  brew tap universal-ctags/universal-ctags
+  brew install --HEAD universal-ctags
+  ```
+  
+- Install cmake for YouCompleteMe
+
+  ```
+  brew install cmake
+  ```
+  
 - `make install`
+- `mvim +PluginInstall`
+- Install YouCompleteMe
+
+  ```
+  cd ~/.vim/bundle/YouCompleteMe
+  ./install.py -h
+  # Install which youcompleteme component you want
+  ```
+
 
 # Tips
 
