@@ -59,6 +59,7 @@ Plugin  'honza/vim-snippets'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'lumiliet/vim-twig'
+Plugin 'tobyS/vmustache'
 Plugin 'tobyS/pdv'
 
 "Search and replace
