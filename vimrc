@@ -172,6 +172,12 @@ au WinLeave * set nocursorline
 au WinEnter * set cursorline
 set cursorline
 
+" Show line number and fake a custom left padding area with 4 width
+set number
+hi LineNr guibg=bg
+set foldcolumn=4
+hi foldcolumn guibg=bg
+
 "===MacVim===
 highlight LineNr ctermbg=NONE
 if has("gui_running")
