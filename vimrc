@@ -12,8 +12,9 @@ Plugin 'rizzatti/funcoo.vim'
 " Smart input
 Plugin 'kana/vim-smartinput'
 
-" Base16 color schemas
+" Color schemas
 Plugin 'chriskempson/base16-vim'
+Plugin 'joshdick/onedark.vim'
 
 " Powerful comment functions
 Plugin 'scrooloose/nerdcommenter'
@@ -34,6 +35,7 @@ Plugin 'editorconfig/editorconfig-vim'
 " Airline and themes
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'joshdick/airline-onedark.vim'
 
 Plugin 'vim-scripts/PreserveNoEOL'
 Plugin 'ervandew/supertab'
@@ -81,6 +83,7 @@ Plugin 'othree/es.next.syntax.vim'
 " For html and html5
 Plugin 'othree/html5.vim'
 Plugin 'alvan/vim-closetag'
+Plugin 'mattn/emmet-vim'
 
 " Configuration files syntax
 Plugin 'cespare/vim-toml'
@@ -117,7 +120,6 @@ set report=0
 set incsearch
 set ignorecase
 set smartcase
-set foldcolumn=0
 set showmatch
 set showcmd
 set title
@@ -163,8 +165,12 @@ set completeopt=longest,menuone
 "===Interface===
 syntax on
 set background=dark
-let base16colorspace=256
-colorscheme base16-ocean
+
+" let base16colorspace=256
+" colorscheme base16-ocean
+
+let g:onedark_termcolors=256
+colorscheme onedark
 " set transparency=5
 
 " Highlight current line
@@ -175,7 +181,7 @@ set cursorline
 " Show line number and fake a custom left padding area with 4 width
 set number
 hi LineNr guibg=bg
-set foldcolumn=4
+set foldcolumn=2
 hi foldcolumn guibg=bg
 
 "===MacVim===
@@ -254,7 +260,8 @@ let g:airline_powerline_fonts=0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_detect_modified=1
-let g:airline_theme='murmur'
+" let g:airline_theme='murmur'
+let g:airline_theme='onedark'
 
 "===netrw===
 " let g:netrw_liststyle=3
@@ -345,6 +352,11 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 "===vim-jsx===
 let g:jsx_ext_required = 0
+
+"===Emmet===
+" Emmet vim ctrl+y+,
+let g:user_emmet_install_global=0
+autocmd FileType html,css EmmetInstall
 
 "===PHP===
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
