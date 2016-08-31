@@ -99,6 +99,9 @@ Plugin 'xolox/vim-easytags'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+" Json
+Plugin 'elzr/vim-json'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -142,6 +145,7 @@ autocmd FileType js,vue,html,json,md,css,h,c,cc setlocal tabstop=2 shiftwidth=2 
 " Syntax support
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.vue set filetype=html
+au! BufRead,BufNewFile *.json set filetype=json
 
 "===Encoding===
 set encoding=utf8
