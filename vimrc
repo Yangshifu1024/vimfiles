@@ -14,7 +14,6 @@ Plugin 'kana/vim-smartinput'
 
 " Color schemas
 Plugin 'chriskempson/base16-vim'
-Plugin 'joshdick/onedark.vim'
 
 " Powerful comment functions
 Plugin 'scrooloose/nerdcommenter'
@@ -35,7 +34,6 @@ Plugin 'editorconfig/editorconfig-vim'
 " Airline and themes
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'joshdick/airline-onedark.vim'
 
 Plugin 'vim-scripts/PreserveNoEOL'
 Plugin 'ervandew/supertab'
@@ -153,13 +151,13 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 "===GUI===
-set guifont=DejaVu_Sans_Mono:h19
+set guifont=Monaco:h19
 set guioptions-=e
 set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-set linespace=15
+set linespace=10
 set showmode
 set autoread
 set autowriteall
@@ -170,11 +168,9 @@ set completeopt=longest,menuone
 syntax on
 set background=dark
 
-" let base16colorspace=256
-" colorscheme base16-ocean
+let base16colorspace=256
+colorscheme base16-monokai
 
-let g:onedark_termcolors=256
-colorscheme onedark
 " set transparency=5
 
 " Highlight current line
@@ -264,8 +260,7 @@ let g:airline_powerline_fonts=0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_detect_modified=1
-" let g:airline_theme='murmur'
-let g:airline_theme='onedark'
+let g:airline_theme='molokai'
 
 "===netrw===
 " let g:netrw_liststyle=3
