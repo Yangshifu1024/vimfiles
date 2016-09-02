@@ -97,6 +97,9 @@ Plugin 'xolox/vim-easytags'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+" Vue.js
+Plugin 'posva/vim-vue'
+
 " Json
 Plugin 'elzr/vim-json'
 
@@ -142,7 +145,6 @@ autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType js,vue,html,json,md,css,h,c,cc setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 " Syntax support
 au BufNewFile,BufRead *.ejs set filetype=html
-au BufNewFile,BufRead *.vue set filetype=html
 au! BufRead,BufNewFile *.json set filetype=json
 
 "===Encoding===
@@ -151,7 +153,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 "===GUI===
-set guifont=Monaco:h19
+set guifont=Monaco:h17
 set guioptions-=e
 set guioptions-=l
 set guioptions-=L
