@@ -18,6 +18,7 @@ Plugin 'kana/vim-smartinput'
 
 " Color schemas
 Plugin 'chriskempson/base16-vim'
+Plugin 'ajh17/Spacegray.vim'
 
 " Powerful comment functions
 Plugin 'scrooloose/nerdcommenter'
@@ -174,8 +175,12 @@ set completeopt=longest,menuone
 syntax on
 set background=dark
 
-let base16colorspace=256
-colorscheme base16-monokai
+" let base16colorspace=256
+" colorscheme base16-monokai
+
+let g:spacegray_underline_search = 1
+let g:spacegray_italicize_comments = 1
+colorscheme spacegray
 
 " set transparency=5
 
@@ -266,7 +271,7 @@ let g:airline_powerline_fonts=0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_detect_modified=1
-let g:airline_theme='molokai'
+let g:airline_theme='murmur'
 
 "===netrw===
 " let g:netrw_liststyle=3
