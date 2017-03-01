@@ -361,6 +361,10 @@ let g:easytags_suppress_ctags_warning = 1
 "===YouCompleteMe===
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
+"===color_coded===
+let g:color_coded_enabled = 1
+let g:color_coded_filetypes = ['c', 'cpp', 'h']
+
 "===vim-jsx===
 let g:jsx_ext_required = 0
 
