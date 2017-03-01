@@ -18,7 +18,6 @@ Plugin 'kana/vim-smartinput'
 
 " Color schemas
 Plugin 'chriskempson/base16-vim'
-Plugin 'ajh17/Spacegray.vim'
 
 " Powerful comment functions
 Plugin 'scrooloose/nerdcommenter'
@@ -74,6 +73,9 @@ Plugin 'skwp/greplace.vim'
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
+
+" libclang color code
+Plugin 'jeaye/color_coded'
 
 Plugin 'scrooloose/syntastic'
 " For rust lang
@@ -158,7 +160,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 "===GUI===
-set guifont=Monaco:h17
+set guifont=SF_Mono:h18
 set guioptions-=e
 set guioptions-=l
 set guioptions-=L
@@ -175,12 +177,11 @@ set completeopt=longest,menuone
 syntax on
 set background=dark
 
-" let base16colorspace=256
-" colorscheme base16-monokai
+let base16colorspace=256
+colorscheme base16-onedark
 
 let g:spacegray_underline_search = 1
 let g:spacegray_italicize_comments = 1
-colorscheme spacegray
 
 " set transparency=5
 
@@ -271,7 +272,7 @@ let g:airline_powerline_fonts=0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_detect_modified=1
-let g:airline_theme='murmur'
+let g:airline_theme='onedark'
 
 "===netrw===
 " let g:netrw_liststyle=3
