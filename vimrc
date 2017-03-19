@@ -6,7 +6,7 @@ endif
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
@@ -73,9 +73,6 @@ Plugin 'skwp/greplace.vim'
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
-
-" libclang color code
-Plugin 'jeaye/color_coded'
 
 Plugin 'scrooloose/syntastic'
 " For rust lang
@@ -166,7 +163,7 @@ set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-set linespace=10
+set linespace=15
 set showmode
 set autoread
 set autowriteall
@@ -265,7 +262,7 @@ nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 "===editorconfig/editorconfig-vim===
 let g:EditorConfig_verbose=0
 let g:EditorConfig_core_mode = 'external_command'
-let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
 
 "===vim-airline/vim-airline===
 let g:airline_powerline_fonts=0
