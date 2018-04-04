@@ -127,7 +127,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 "===GUI===
-set guifont=Input\ Mono\ Narrow:h18
+set guifont=Input\ Mono\ Narrow:h16
 set guioptions-=e
 set guioptions-=l
 set guioptions-=L
@@ -261,40 +261,6 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 " Greplace
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
-
-"===scrooloose/syntastic===
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_loc_list_height = 3
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-let g:go_list_type = "quickfix"
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_vue_checkers = ['eslint']
-let g:syntastic_html_checkers = ['eslint']
-let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
-if matchstr(local_eslint, "^\/\\w") == ''
-    let local_eslint = getcwd() . "/" . local_eslint
-endif
-if executable(local_eslint)
-    let g:syntastic_javascript_eslint_exec = local_eslint
-    let g:syntastic_vue_eslint_exec = local_eslint
-    let g:syntastic_html_eslint_exec = local_eslint
-endif
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
-let g:syntastic_error_symbol = '🚫'
-let g:syntastic_style_error_symbol = '💩'
-let g:syntastic_warning_symbol = '🔶'
-let g:syntastic_style_warning_symbol = '🔸'
 
 "===EasyTags===
 let g:easytags_dynamic_files = 1
