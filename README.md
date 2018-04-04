@@ -17,20 +17,8 @@ My vimfiles
   brew install --HEAD universal-ctags
   ```
   
-- Install cmake for YouCompleteMe
-
-  ```
-  brew install cmake
-  ```
-  
 - `make install`
 - `mvim +PluginInstall`
-- Install YouCompleteMe
-
-  ```
-  cd ~/.vim/bundle/YouCompleteMe
-  ./install.py -h
-  # Install which youcompleteme component you want
   ```
 
 

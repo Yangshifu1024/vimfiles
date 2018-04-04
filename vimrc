@@ -6,7 +6,7 @@ endif
 set nocompatible
 filetype off
 
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
@@ -18,6 +18,7 @@ Plugin 'kana/vim-smartinput'
 
 " Color schemas
 Plugin 'chriskempson/base16-vim'
+Plugin 'rainglow/vim'
 
 " Powerful comment functions
 Plugin 'scrooloose/nerdcommenter'
@@ -59,33 +60,9 @@ Plugin 'SirVer/ultisnips'
 " More snippets
 Plugin  'honza/vim-snippets'
 
-"PHP
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'lumiliet/vim-twig'
-Plugin 'tobyS/vmustache'
-Plugin 'tobyS/pdv'
-
 "Search and replace
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
-
-" YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-
-Plugin 'scrooloose/syntastic'
-" For rust lang
-Plugin 'rust-lang/rust.vim'
-" For golang
-Plugin 'fatih/vim-go'
-" For es6
-Plugin 'othree/yajs.vim'
-Plugin 'othree/es.next.syntax.vim'
-" For html and html5
-Plugin 'othree/html5.vim'
-Plugin 'alvan/vim-closetag'
-Plugin 'mattn/emmet-vim'
 
 " Configuration files syntax
 Plugin 'cespare/vim-toml'
@@ -96,13 +73,6 @@ Plugin 'easymotion/vim-easymotion'
 " EasyTags
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
-
-" React
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
-" Vue.js
-Plugin 'posva/vim-vue'
 
 " Json
 Plugin 'elzr/vim-json'
@@ -157,13 +127,13 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 "===GUI===
-set guifont=SF_Mono:h18
+set guifont=Input\ Mono\ Narrow:h18
 set guioptions-=e
 set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-set linespace=15
+set linespace=10
 set showmode
 set autoread
 set autowriteall
@@ -175,7 +145,8 @@ syntax on
 set background=dark
 
 let base16colorspace=256
-colorscheme base16-onedark
+" colorscheme base16-onedark
+colorscheme rainbow
 
 let g:spacegray_underline_search = 1
 let g:spacegray_italicize_comments = 1
@@ -325,29 +296,6 @@ let g:syntastic_style_error_symbol = '💩'
 let g:syntastic_warning_symbol = '🔶'
 let g:syntastic_style_warning_symbol = '🔸'
 
-"===rust===
-" Install rustfmt by `cargo install rustfmt`
-let g:rustfmt_autosave = 1
-let g:ycm_rust_src_path = "~/Source/rust"
-
-"===go===
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_fmt_command = "goimports"
-au FileType go nmap <leader>gi <Plug>(go-imports)
-au FileType go nmap <leader>gr <Plug>(go-run)
-au FileType go nmap <leader>gb <Plug>(go-build)
-au FileType go nmap <leader>gt <Plug>(go-test)
-au FileType go nmap <Leader>gd <Plug>(go-def-split)
-au FileType go nmap <Leader>gc <Plug>(go-doc)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-
 "===EasyTags===
 let g:easytags_dynamic_files = 1
 let g:easytags_async = 1
@@ -355,80 +303,9 @@ let g:easytags_syntax_keyword = 'always'
 let g:easytags_always_enabled = 1
 let g:easytags_suppress_ctags_warning = 1
 
-"===YouCompleteMe===
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-
 "===color_coded===
 let g:color_coded_enabled = 1
 let g:color_coded_filetypes = ['c', 'cpp', 'h']
-
-"===vim-jsx===
-let g:jsx_ext_required = 0
-
-"===Emmet===
-" Emmet vim ctrl+y+,
-let g:user_emmet_install_global=0
-autocmd FileType html,css EmmetInstall
-
-"===PHP===
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
-autocmd BufRead,BufNewFile *.php nnoremap <buffer> <Leader>c :call pdv#DocumentCurrentLine()<CR>
-
-"===Useful functions===
-
-" BuildCTags
-function! BuildCTags()
-    if(executable("ctags"))
-        silent! execute "!rm -f .src .tags"
-        silent! execute "!find . -name '*.php' -o -name '*.c' -o -name '*.h' > .src"
-        execute "!ctags -L .src -f .tags --totals"
-        set tags=.tags,~/.vimtags
-    endif
-endf
-nmap ,0  :call BuildCTags()<cr>
-
-" Clang-Format
-function! ClangFormat()
-    if (executable("clang-format"))
-        let s:current_file = @%
-        let command = "!clang-format -style=file -i " . s:current_file
-        exec command
-    endif
-endf
-nmap ,cf :call ClangFormat()<cr>
-
-" PHP cs fixer
-function! PhpCsFixer()
-    let s:current_file = @%
-    let command = "!php-cs-fixer fix " . s:current_file . " --config-file=$HOME/.php_cs"
-    exec command
-endfunction
-nmap ,pf :call PhpCsFixer()<cr>
-
-" js-beautify
-function! JsBeautify()
-    let s:current_file = @%
-    let command = "!js-beautify " . s:current_file . " -r"
-    exec command
-endfunction
-nmap ,jf :call JsBeautify()<cr>
-
-" html-beautify
-function! HtmlBeautify()
-    let s:current_file = @%
-    let command = "!html-beautify " . s:current_file . " -r"
-    exec command
-endfunction
-nmap ,hf :call HtmlBeautify()<cr>
-
-" go fmt
-function! GoFmt()
-    let s:current_file = @%
-    let command = "!gofmt -w " . s:current_file
-    exec command
-endfunction
-nmap ,fg :call GoFmt()<cr>
-nmap ,lg :call GoLint()<cr>
 
 " Move a line of text using Comamnd+[jk]
 nmap <D-j> mz:m+<cr>`z
